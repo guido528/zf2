@@ -2,21 +2,22 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Users\Controller\Index' => 'Users\Controller\IndexController',
-        		
+            'User\Controller\Index' => 'User\Controller\IndexController',
+        	'User\Controller\Register' => 'User\Controller\RegisterController',
+        	'User\Controller\Login' => 'User\Controller\LoginController',
         ),
     ),
     'router' => array(
         'routes' => array(
-            'Users' => array(
+            'User' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/users',
+                    'route'    => '/user',
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
                         // the controllers for your module are found
-                        '__NAMESPACE__' => 'Users\Controller',
+                        '__NAMESPACE__' => 'User\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
                     ),
@@ -45,7 +46,7 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'users' => __DIR__ . '/../view',
+            'user' => __DIR__ . '/../view',
         ),
     ),
 );
