@@ -33,5 +33,13 @@ class LoginForm extends Form {
 				'label' => 'Password',
 			),
 		));
+		
+		$this->add(array(
+			'name' => 'submit',
+			'attributes' => array(
+					'type' => 'submit',
+					'value' => 'Login',
+			),
+		));
 	}
 }

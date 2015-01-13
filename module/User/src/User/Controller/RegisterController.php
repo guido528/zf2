@@ -38,8 +38,8 @@ class RegisterController extends AbstractActionController {
 		
 		if (!$form->isValid()) {
 			$model = new ViewModel(array(
-					'error' => true,
-					'form' => $form,
+				'error' => true,
+				'form' => $form,
 			));
 			$model->setTemplate('user/register/index');
 			return $model;

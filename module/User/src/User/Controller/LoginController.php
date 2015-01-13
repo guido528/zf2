@@ -5,8 +5,13 @@ namespace User\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\Adapter\DbTable as DbTableAuthAdapter;
+use Zend\View\Model\ViewModel;
+use User\Form\LoginForm;
 
 class LoginController extends AbstractActionController {
+	
+	protected $authservice;
+	
 	public function indexAction() {
 		$form = new LoginForm();
 		$viewModel = new ViewModel(array('form' => $form));
@@ -34,6 +39,10 @@ class LoginController extends AbstractActionController {
 				'action' => 'confirm'
 			));
 		}
+		
+		return $this->redirect()->toRoute(NULL , array(
+			'controller' => 'login',
+		));
 	}
 	
 	public function confirmAction() {
